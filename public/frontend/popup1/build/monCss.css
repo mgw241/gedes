@@ -1,0 +1,17 @@
+#containerImage {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+#imageImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#textImage {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  color: black;
+}

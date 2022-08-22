@@ -1,0 +1,252 @@
+
+
+/*        CUSTOM COLOR START              */
+.card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;  
+}
+.content-wrapper{
+    background-color: #875a7b09 !important;   
+}
+.main-sidebar{
+    background-color: #b6e2ff !important;
+    color: white !important;
+  }
+
+.sidebar a{
+    color: rgb(3, 2, 2) !important;
+  }
+
+.brand-link{
+color: rgb(7, 5, 5) !important;
+border-bottom: none !important;
+margin-top: -1rem !important;
+    padding-right: 0.5rem;
+    padding-bottom: 0.1rem !important;
+}
+.brand-link > span{
+    font-size: 3rem !important;
+    margin-left: 20px;
+    font-weight: bold !important;
+    /* TEXTE GEDES */
+}
+.brand-link .brand-image {
+    /*  IMAGE LOGO LEFT */
+    float: left;
+    line-height: 2px !important;
+    margin-left: .1rem !important;
+    margin-right: .5rem !important;
+    margin-top: 10px !important;
+    max-height: 45px !important;
+    width: auto;
+}
+
+.dropdown-menu {    /* Margintop du menu dropdown du profile  */
+    margin-top: .5rem !important;
+}
+
+.modal-header{
+    background-color: #fff !important;
+}
+.modal-footer{
+    background-color: #fff !important;
+}
+.modal-body{
+    background-color: #875a7b09 !important;
+}
+
+.popupetat:hover{
+    filter: brightness(0.7);
+    cursor: pointer;
+    /* filter: brightness(5.00);*/
+}
+
+/*  LES LINK ENFANT DU MAINBAR    */
+.nav-treeview > .nav-item > .nav-link{
+    margin-left: 25px !important;
+    width: 262px !important;
+}
+.nav-treeview > .nav-item > a.nav-link{
+    /* margin-left: 20px !important;    */
+}
+/*          2
+.content-wrapper{
+    background-color: #ecf0f5 !important;   
+}
+  .main-sidebar{
+    background-color: #f9fafc !important;
+    color: black !important;
+  }
+  
+  .main-header{
+    background-color: #3c8dbc !important;
+  }
+
+.sidebar a{
+    color: #444 !important;
+  }
+*/
+
+
+ /*     1
+  .nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #000000 !important;
+}
+.sidebar a:hover{
+    color: #000000 !important;
+    background-color: #ecf0f5 !important;
+  }
+   
+  a.nav-link.active  {
+    color: #000 !important;
+    font-weight: bold !important;
+}
+
+a.nav-link.active:hover  {
+    color: #000 !important;
+    background: transparent !important;
+    font-weight: bold !important;
+}
+
+.nav-link.active {
+    color: #fff !important;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%) !important;
+}
+
+.nav-pills .nav-link {
+    color: #6c757d  !important;
+}
+
+.brand-link{
+    color: black !important;
+}
+*/
+.tabBtnDelete{
+
+    filter: brightness(0.7);
+    cursor: pointer;
+}
+
+/*        CUSTOM COLOR END              */
+.navbar-nav>.user-menu .user-image {
+    border-radius: 50%;
+    float: left;
+    height: 3.4rem !important;
+    margin-top: -15px !important;
+    width: 3.4rem !important;
+}
+
+.labelChamp{
+    color: black;
+    font-weight: normal !important;
+  }
+ 
+
+.inputBold{
+font-weight: bold !important;
+}
+
+.labelRow{
+    color: #007bff;
+    font-size: 17px;
+    /*font-weight: normal ! important;*/
+}
+
+.reqD{
+    color: red;
+}
+
+.lineSeparateur{
+    /*background-color: green;*/
+}
+
+.tablePresentation td{
+
+    /*color: #007bff;*/
+    color: #007bff;
+    font-weight: normal;
+    border-top: none;
+}
+
+.tablePresentation tr{
+    border-top: none;
+    border-bottom: 0.1px solid lightgray;
+}
+
+.tablePresentation th{
+    font-weight: bold;
+    border-top: none;
+    border-bottom: 0.1px solid lightgray;
+}
+
+.tablePresentation th input{
+    font-weight: bold;
+    color: black;
+}
+
+
+.mesLiens{
+    background-color: white !important;
+    color: #007bff !important;
+}
+
+
+.mesLiens:hover{
+    background-color: #d3d3d3 !important;
+    color: black !important;
+}
+
+.imgPDF{
+    width: 20px;
+
+}
+
+.lienPDF{
+    color: black;
+    font-weight:normal;
+}
+
+#example1 tbody td {
+    padding: 4px 6px; /* e.g. change 8x to 4px here */
+}
+
+#example1 thead th {
+    background-color: whitesmoke !important;
+}
+/*
+#example1 tbody tr.even:hover {
+    background-color:  #ffa;
+    cursor: pointer;
+}
+
+#example1 tr.even:hover td.sorting_1 {
+    background-color:  #ffa;
+    cursor: pointer;
+}
+*/
+.fa-edit {
+    color: rgb(4, 97, 20);
+    padding-right: 10px;
+}
+.fa-edit:hover {
+    color: red;
+}
+
+.fa-eye {
+    color: rgb(4, 97, 20);
+    padding-right: 10px;
+}
+.fa-eye:hover {
+    color: red;
+}
+
+.fa-trash {
+    color: black;
+}
+.fa-trash:hover {
+    color: red;
+}
+/*
+#toast-container >div {
+    width: 1200px; /* width: 100% 
+  }*/

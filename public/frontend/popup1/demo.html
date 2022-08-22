@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>toastr examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="bootstrap-combined.min.css" rel="stylesheet">
+    <link href="build/toastr.css" rel="stylesheet" type="text/css" />
+    <style>
+        .row {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body class="container" onload="afficherToast()">
+<script type="text/javascript">
+    function afficherToast(){
+        $('#showtoast').click(function () {
+            var shortCutFunction = $("#toastTypeGroup input:radio:checked").val();
+            var msg = $('#message').val();
+            var title = $('#title').val() || '';
+            var $showDuration = $('#showDuration');
+            var $hideDuration = $('#hideDuration');
+            var $timeOut = $('#timeOut');
+            var $extendedTimeOut = $('#extendedTimeOut');
+            var $showEasing = $('#showEasing');
+            var $hideEasing = $('#hideEasing');
+            var $showMethod = $('#showMethod');
+            var $hideMethod = $('#hideMethod');
+            var toastIndex = toastCount++;
+            var addClear = $('#addClear').prop('checked');
+
+            toastr.options = {
+                closeButton: $('#closeButton').prop('checked'),
+                debug: $('#debugInfo').prop('checked'),
+                newestOnTop: $('#newestOnTop').prop('checked'),
+                progressBar: $('#progressBar').prop('checked'),
+                rtl: $('#rtl').prop('checked'),
+                positionClass: $('#positionGroup input:radio:checked').val() || 'toast-top-right',
+                preventDuplicates: $('#preventDuplicates').prop('checked'),
+                onclick: null
+            };
+
+            if ($('#addBehaviorOnToastClick').prop('checked')) {
+                toastr.options.onclick = function () {
+                    alert('You can perform some custom action after a toast goes away');
+                };
+            }
+
+            if ($('#addBehaviorOnToastCloseClick').prop('checked')) {
+                toastr.options.onCloseClick = function () {
+                    alert('You can perform some custom action when the close button is clicked');
+                };
+            }
+
+            if ($showDuration.val().length) {
+                toastr.options.showDuration = parseInt($showDuration.val());
+            }
+
+            if ($hideDuration.val().length) {
+                toastr.options.hideDuration = parseInt($hideDuration.val());
+            }
+
+            if ($timeOut.val().length) {
+                toastr.options.timeOut = addClear ? 0 : parseInt($timeOut.val());
+            }
+
+            if ($extendedTimeOut.val().length) {
+                toastr.options.extendedTimeOut = addClear ? 0 : parseInt($extendedTimeOut.val());
+            }
+
+            if ($showEasing.val().length) {
+                toastr.options.showEasing = $showEasing.val();
+            }
+
+            if ($hideEasing.val().length) {
+                toastr.options.hideEasing = $hideEasing.val();
+            }
+
+            if ($showMethod.val().length) {
+                toastr.options.showMethod = $showMethod.val();
+            }
+
+            if ($hideMethod.val().length) {
+                toastr.options.hideMethod = $hideMethod.val();
+            }
+
+            if (addClear) {
+                msg = getMessageWithClearButton(msg);
+                toastr.options.tapToDismiss = false;
+            }
+            if (!msg) {
+                msg = getMessage();
+            }
+
+            $('#toastrOptions').text('Command: toastr["'
+                    + shortCutFunction
+                    + '"]("'
+                    + msg
+                    + (title ? '", "' + title : '')
+                    + '")\n\ntoastr.options = '
+                    + JSON.stringify(toastr.options, null, 2)
+            );
+
+            var $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
+            $toastlast = $toast;
+
+            if(typeof $toast === 'undefined'){
+                return;
+            }
+
+            if ($toast.find('#okBtn').length) {
+                $toast.delegate('#okBtn', 'click', function () {
+                    alert('you clicked me. i was toast #' + toastIndex + '. goodbye!');
+                    $toast.remove();
+                });
+            }
+            if ($toast.find('#surpriseBtn').length) {
+                $toast.delegate('#surpriseBtn', 'click', function () {
+                    alert('Surprise! you clicked me. i was toast #' + toastIndex + '. You could perform an action here.');
+                });
+            }
+            if ($toast.find('.clear').length) {
+                $toast.delegate('.clear', 'click', function () {
+                    toastr.clear($toast, { force: true });
+                });
+            }
+        });
+    }
+
+</script>
+<section class="row">
+    <h1>toastr</h1>
+
+    <div class="well row">
+        <div class="row">
+            
+
+
+        <div class="row">
+            <button type="button" class="btn btn-primary" id="DARRYL" onclick="jesaispas()">Darrylt</button>
+            <button type="button" class="btn btn-primary" id="showtoast">Show Toast</button>
+            <button type="button" class="btn btn-danger" id="cleartoasts">Clear Toasts</button>
+            <button type="button" class="btn btn-danger" id="clearlasttoast">Clear Last Toast</button>
+        </div>
+
+        <div class="row" style='margin-top: 25px;'>
+            <pre id='toastrOptions'></pre>
+        </div>
+    </div>
+</section>
+
+
+<script src="jquery-1.9.1.min.js"></script>
+<script src="toastr.js"></script>
+
+
+<script type="text/javascript">
+
+    function jesaispas(){
+            alert('t');
+            var shortCutFunction = "success";//$("#toastTypeGroup input:radio:checked").val()  info,warning,error,success
+            var msg = "Un administrateur doit valider le message pour qu'il soit reçu par les clients";
+            var title = "Message envoyé !";
+
+            toastr.options = {      ///////////////     LES OPTIONS DU TOAST
+                closeButton: true,
+                debug: false,//   $('#debugInfo').prop('checked')
+                newestOnTop: false, //  $('#newestOnTop').prop('checked')
+                progressBar: false,  // $('#progressBar').prop('checked')
+                rtl: false,  //  $('#rtl').prop('checked')
+                positionClass: "toast-top-center", //   $('#positionGroup input:radio:checked').val() || 'toast-top-right'
+                preventDuplicates: true,    //  $('#preventDuplicates').prop('checked'),
+                onclick: null
+            };
+
+                toastr.options.showDuration = 300;
+                toastr.options.hideDuration = 1000;
+                toastr.options.timeOut = 5000; //   addClear ? 0 : 5000
+                toastr.options.extendedTimeOut = 1000;   // addClear ? 0 : 1000
+                toastr.options.showEasing = "swing";  //  swing, linear
+                toastr.options.hideEasing = "swing";
+                toastr.options.showMethod = "fadeIn";  // show, fadeIn, slideDown
+                toastr.options.hideMethod = "fadeOut";  //  hide, fadeOut, slideUp
+
+            $('#toastrOptions').text('Command: toastr["'
+                    + shortCutFunction
+                    + '"]("'
+                    + msg
+                    + (title ? '", "' + title : '')
+                    + '")\n\ntoastr.options = '
+                    + JSON.stringify(toastr.options, null, 2)
+            );
+            var $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
+        }
+</script>
+</body>
+</html>
